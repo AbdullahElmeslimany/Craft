@@ -1,5 +1,5 @@
-import 'package:craft/view/clientpage/clienthome.dart';
-import 'package:craft/view/home/homepage.dart';
+import 'package:craft/view/persion/clienthome.dart';
+import 'package:craft/view/worker/home/homepage.dart';
 import 'package:craft/view/login/loginPage.dart';
 import 'package:craft/view/searchpage/searchpage.dart';
 import 'package:firebase_core/firebase_core.dart';

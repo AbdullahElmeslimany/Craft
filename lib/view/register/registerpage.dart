@@ -1,5 +1,5 @@
 import 'package:craft/model/logic_login.dart';
-import 'package:craft/view/home/homepage.dart';
+import 'package:craft/view/worker/home/homepage.dart';
 import 'package:craft/view/login/loginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

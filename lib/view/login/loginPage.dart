@@ -2,7 +2,7 @@ import 'package:craft/constant/constant.dart';
 import 'package:craft/controller/logincontroller.dart';
 import 'package:craft/model/logic_login.dart';
 import 'package:craft/view/register/registerpage.dart';
-import 'package:craft/view/home/homepage.dart';
+import 'package:craft/view/worker/home/homepage.dart';
 
 import 'package:flutter/material.dart';
 
