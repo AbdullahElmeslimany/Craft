@@ -1,4 +1,5 @@
-import 'package:craft/view/persion/clienthome.dart';
+import 'package:craft/view/firstpage/firstscreen.dart';
+import 'package:craft/view/person/career_and_search_page/button_search.dart';
 import 'package:craft/view/worker/home/homepage.dart';
 import 'package:craft/view/login/loginPage.dart';
 import 'package:craft/view/searchpage/searchpage.dart';
@@ -23,12 +24,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-          useMaterial3: true,
-          textTheme: TextTheme(bodyMedium: GoogleFonts.alexandria())
-        ),
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+            useMaterial3: true,
+            textTheme: TextTheme(bodyMedium: GoogleFonts.alexandria())),
         // home: LoginPage()
-        home: ClientHome()
+        home: FirstPage()
         // const Directionality(
         //     textDirection: TextDirection.rtl, child:),
         );

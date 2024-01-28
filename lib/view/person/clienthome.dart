@@ -1,11 +1,13 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:craft/view/persion/helperhome/appbarclient.dart';
-import 'package:craft/view/persion/helperhome/categorise.dart';
-import 'package:craft/view/persion/helperhome/slider.dart';
+import 'package:craft/view/person/helperhome/appbarclient.dart';
+import 'package:craft/view/person/helperhome/categorise.dart';
+import 'package:craft/view/person/helperhome/slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class ClientHome extends StatelessWidget {
+
   const ClientHome({super.key});
 
   @override

@@ -48,8 +48,8 @@ class MyHomePage extends StatelessWidget {
                   logic: () {
                     Get.to(const SeacrchPage());
                   },
-                  basecolor: Colors.black,
-                  namebutton: "بحث عن طلبات"),
+                  borderColor: Colors.black,
+                  namebutton: "بحث عن طلبات", textColor: Colors.black,),
               const Gap(20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

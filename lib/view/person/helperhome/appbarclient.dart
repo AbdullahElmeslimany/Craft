@@ -1,24 +1,17 @@
-import 'package:craft/view/worker/home/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 Row appBarClient(String logo) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      InkWell(
-        onTap: () {
-          Get.to(MyHomePage());
-        },
-        child: Container(
-          height: 50,
-          width: 50,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              image: DecorationImage(
-                image: AssetImage(logo),
-              )),
-        ),
+      Container(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            image: DecorationImage(
+              image: AssetImage(logo),
+            )),
       ),
       Row(
         children: [
