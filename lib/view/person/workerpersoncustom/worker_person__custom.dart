@@ -2,7 +2,7 @@ import 'package:craft/constant/constant.dart';
 import 'package:craft/view/person/clienthome.dart';
 import 'package:craft/view/person/workerpersoncustom/helper/button_accept_worker.dart';
 import 'package:craft/view/person/workerpersoncustom/helper/card_information_worker.dart';
-import 'package:craft/view/person/workerpersoncustom/helper/imageinfo.dart';
+import 'package:craft/view/person/workerpersoncustom/imageinfo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

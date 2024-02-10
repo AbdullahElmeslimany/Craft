@@ -1,8 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:craft/view/person/career_and_search_page/button_search.dart';
-import 'package:craft/view/person/clienthome.dart';
-import 'package:craft/view/person/servicepage/servicepage.dart';
-import 'package:craft/view/person/workerpersoncustom/worker_person__custom.dart';
+import 'package:craft/view/person/career_and_search_page/helper/career-and-search_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -56,15 +56,19 @@ cardWorkerForSearch(
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          typeWorker,
-                          style: const TextStyle(
-                              fontSize: 14, color: Colors.black),
+                        Hero(tag: typeWorker,
+                          child: Text(
+                            typeWorker,
+                            style: const TextStyle(
+                                fontSize: 14, color: Colors.black),
+                          ),
                         ),
-                        Text(
-                          addressWorker,
-                          style:
-                              const TextStyle(fontSize: 12, color: Colors.grey),
+                       Hero(tag: addressWorker,
+                          child: Text(
+                            addressWorker,
+                            style:
+                                const TextStyle(fontSize: 12, color: Colors.grey),
+                          ),
                         ),
                       ],
                     ),
@@ -72,19 +76,23 @@ cardWorkerForSearch(
                       padding: const EdgeInsets.only(top: 25.0),
                       child: Row(
                         children: [
-                          RatingBarIndicator(
-                            rating: rateWorker,
-                            itemBuilder: (context, index) => const Icon(
-                              Icons.star,
-                              color: Colors.amber,
+                          Hero(tag: "$rateWorker",
+                            child: RatingBarIndicator(
+                              rating: rateWorker,
+                              itemBuilder: (context, index) => const Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              itemCount: 5,
+                              itemSize: 20.0,
+                              direction: Axis.horizontal,
                             ),
-                            itemCount: 5,
-                            itemSize: 20.0,
-                            direction: Axis.horizontal,
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 7.0),
-                            child: Text(numberClientForWorker),
+                            child: Hero(
+                              tag: numberClientForWorker,
+                              child: Text(numberClientForWorker)),
                           ),
                         ],
                       ),

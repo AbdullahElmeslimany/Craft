@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:craft/constant/constant.dart';
 import 'package:craft/view/person/career_and_search_page/card_worker_search.dart';
-import 'package:craft/view/person/career_and_search_page/search_card.dart';
+import 'package:craft/view/person/career_and_search_page/helper/search_card.dart';
 import 'package:craft/view/person/workerpersoncustom/worker_person__custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

@@ -21,19 +21,24 @@ infoCradInformationWorker(width) {
           children: [
             Row(
               children: [
-                RatingBarIndicator(
-                  rating: rateWorker,
-                  itemBuilder: (context, index) => const Icon(
-                    Icons.star,
-                    color: Colors.amber,
+                Hero(
+                  tag: '$rateWorker',
+                  child: RatingBarIndicator(
+                    rating: rateWorker,
+                    itemBuilder: (context, index) => const Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    itemCount: 5,
+                    itemSize: 20.0,
+                    direction: Axis.horizontal,
                   ),
-                  itemCount: 5,
-                  itemSize: 20.0,
-                  direction: Axis.horizontal,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 7.0),
-                  child: Text(numberClientForWorker),
+                  child: Hero(
+                      tag: numberClientForWorker,
+                      child: Text(numberClientForWorker)),
                 ),
               ],
             ),
@@ -57,9 +62,12 @@ infoCradInformationWorker(width) {
                   style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
                 const Gap(5),
-                Text(
-                  typeWorker,
-                  style: const TextStyle(fontSize: 15, color: Colors.grey),
+                Hero(
+                  tag: typeWorker,
+                  child: Text(
+                    typeWorker,
+                    style: const TextStyle(fontSize: 15, color: Colors.grey),
+                  ),
                 ),
               ],
             ),
@@ -74,9 +82,12 @@ infoCradInformationWorker(width) {
                   style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
                 const Gap(5),
-                Text(
-                  addressWorker,
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                Hero(
+                  tag: addressWorker,
+                  child: Text(
+                    addressWorker,
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
                 ),
               ],
             ),
