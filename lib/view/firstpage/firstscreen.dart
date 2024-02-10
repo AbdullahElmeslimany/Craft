@@ -1,7 +1,7 @@
-
-import 'package:craft/view/person/clienthome.dart';
+import 'package:craft/view/client/app_bar_buttom/bar_buttom_app.dart';
+import 'package:craft/view/client/clienthome.dart';
 import 'package:craft/view/worker/home/helper/buttoncastom.dart';
-import 'package:craft/view/worker/home/homepage.dart';
+import 'package:craft/view/worker/home/worker_homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -18,7 +18,7 @@ class FirstPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CastomButton(
-              colorBackGround: Color.fromARGB(255, 255, 27, 27),
+              colorBackGround: const Color.fromARGB(255, 255, 27, 27),
               borderColor: const Color.fromARGB(255, 255, 27, 27),
               namebutton: "صاحب حرفة",
               logic: () {
@@ -33,7 +33,7 @@ class FirstPage extends StatelessWidget {
               borderColor: Colors.green,
               namebutton: "العميل",
               logic: () {
-                Get.to(const ClientHome());
+                Get.to(const ButtonBarC());
               },
             )
           ],

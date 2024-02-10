@@ -1,13 +1,14 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:craft/view/person/helperhome/appbarclient.dart';
-import 'package:craft/view/person/helperhome/categorise.dart';
-import 'package:craft/view/person/helperhome/slider.dart';
+import 'package:craft/view/client/categorise_page/helperhome/appbarclient.dart';
+import 'package:craft/view/client/categorise_page/helperhome/categorise.dart';
+import 'package:craft/view/client/categorise_page/categorise_page.dart';
+import 'package:craft/view/client/categorise_page/helperhome/slider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class ClientHome extends StatelessWidget {
-
   const ClientHome({super.key});
 
   @override
@@ -47,16 +48,37 @@ class ClientHome extends StatelessWidget {
             const Gap(7),
             FadeInRightBig(
               duration: const Duration(seconds: 2),
-              child: const Padding(
-                padding: EdgeInsets.only(right: 10.0),
-                child: Text(
-                  "الصيانة",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    MaterialButton(
+                      onPressed: () {
+                        Get.to(const CategoriseAllPage());
+                      },
+                      child: const Text(
+                        "الكل",
+                        style: TextStyle(
+                            color: Color.fromARGB(207, 99, 156, 255),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    const Text(
+                      "الصيانة",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ),
             ),
             const Gap(8),
-            const Center(child: Categorise())
+            const Center(
+                child: Categorise(
+              numberlist: 9,
+            ))
           ],
         ),
       )),

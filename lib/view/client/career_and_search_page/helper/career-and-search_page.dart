@@ -1,11 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:craft/constant/constant.dart';
-import 'package:craft/view/person/career_and_search_page/card_worker_search.dart';
-import 'package:craft/view/person/career_and_search_page/helper/search_card.dart';
-import 'package:craft/view/person/workerpersoncustom/worker_person__custom.dart';
+import 'package:craft/view/client/career_and_search_page/card_worker_search.dart';
+import 'package:craft/view/client/career_and_search_page/helper/search_card.dart';
+import 'package:craft/view/client/worker_person_custom/worker_person__custom.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -59,20 +57,22 @@ class _CareerAndSearchPageState extends State<CareerAndSearchPage> {
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (BuildContext context, int index) {
-                    return cardWorkerForSearch(
-                        nameWorker: nameWorker,
-                        imageWorker: imageWorker,
-                        addressWorker: addressWorker,
-                        typeWorker: typeWorker,
-                        numberClientForWorker: numberClientForWorker,
-                        rateWorker: rateWorker,
-                        onTap: () {
-                          Get.to(const WorkerPersonCastomPage());
-                        });
-                  },
+                child: FadeInUpBig(
+                  child: ListView.builder(
+                    itemCount: 1,
+                    itemBuilder: (BuildContext context, int index) {
+                      return cardWorkerForSearch(
+                          nameWorker: nameWorker,
+                          imageWorker: imageWorker,
+                          addressWorker: addressWorker,
+                          typeWorker: typeWorker,
+                          numberClientForWorker: numberClientForWorker,
+                          rateWorker: rateWorker,
+                          onTap: () {
+                            Get.to(const WorkerPersonCastomPage());
+                          });
+                    },
+                  ),
                 ),
               )
             ],

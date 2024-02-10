@@ -1,10 +1,9 @@
-import 'package:craft/constant/constant.dart';
 import 'package:craft/controller/logincontroller.dart';
 import 'package:craft/model/logic_login.dart';
-import 'package:craft/view/register/registerpage.dart';
-import 'package:craft/view/worker/home/homepage.dart';
-
+import 'package:craft/view/login_and_signup/register/registerpage.dart';
+import 'package:craft/view/worker/home/worker_homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -16,29 +15,41 @@ class LoginPage extends StatelessWidget {
       body: Container(
         height: MediaQuery.sizeOf(context).height,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/two.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
+            // image: DecorationImage(
+            //   image: AssetImage("assets/images/two.png"),
+            //   fit: BoxFit.cover,
+            // ),
+            ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: SingleChildScrollView(
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.only(top: 55.0),
+                padding: const EdgeInsets.only(top: 10.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      "assets/images/logoremove.png",
-                      fit: BoxFit.fill,
-                      height: MediaQuery.sizeOf(context).width / 2.2,
-                      width: MediaQuery.sizeOf(context).width - 40,
+                    Center(
+                      child: Image.asset(
+                        "assets/images/logoremove.png",
+                        fit: BoxFit.fill,
+                        height: MediaQuery.sizeOf(context).width / 3.4,
+                        width: MediaQuery.sizeOf(context).width - 250,
+                      ),
                     ),
-                    const SizedBox(
-                      height: 70,
+                    const Gap(30),
+                    const Text(
+                      "تسجيل دخول",
+                      style:
+                          TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                     ),
+                    const Gap(12),
+                    Text(
+                      "يجب تسجيل الدخول لاستخدام التطبيق",
+                      style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                    ),
+                    const Gap(17),
                     Center(
                       child: Form(
                         key: formKeylogin,
@@ -48,17 +59,24 @@ class LoginPage extends StatelessWidget {
                           children: [
                             //Email entry field
                             Container(
-                              height: 200,
+                              height: 285,
                               width: MediaQuery.sizeOf(context).width - 20,
                               decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color:
+                                      const Color.fromARGB(111, 221, 221, 221),
                                   borderRadius: BorderRadius.circular(25)),
                               child: Center(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
+                                      const Text(
+                                        "البريد الالكتروني",
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                      const Gap(13),
                                       TextFormField(
                                         controller: email,
                                         keyboardType:
@@ -70,7 +88,7 @@ class LoginPage extends StatelessWidget {
                                           border: OutlineInputBorder(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(25))),
-                                          labelText: "Email",
+                                          hintText: "ادخل البريد الالكتروني",
                                         ),
                                         textAlign: TextAlign.end,
                                         validator: (value) {
@@ -81,13 +99,19 @@ class LoginPage extends StatelessWidget {
                                         },
                                       ),
                                       const SizedBox(
-                                        height: 10,
+                                        height: 17,
                                       ),
+                                      const Text(
+                                        "الرقم السري",
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                      const Gap(13),
                                       //Password entry field
+
                                       TextFormField(
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
-                                            return 'يرجي ادخال باسورد';
+                                            return 'يرجي ادخال الرقم السري';
                                           }
                                           return null;
                                         },
@@ -102,7 +126,7 @@ class LoginPage extends StatelessWidget {
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(25))),
                                           prefixIcon: Icon(Icons.password),
-                                          labelText: "Password",
+                                          hintText: "ادخل الرقم السري",
                                         ),
                                         textAlign: TextAlign.end,
                                       ),
@@ -118,7 +142,7 @@ class LoginPage extends StatelessWidget {
                               height: 50,
                               width: MediaQuery.sizeOf(context).width - 50,
                               decoration: BoxDecoration(
-                                  color: bisacColor,
+                                  color: Colors.orange,
                                   borderRadius: BorderRadius.circular(25)),
                               child: MaterialButton(
                                 onPressed: () async {
@@ -135,7 +159,8 @@ class LoginPage extends StatelessWidget {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => MyHomePage(),
+                                          builder: (context) =>
+                                              const MyHomePage(),
                                         ));
                                   }
                                 },
@@ -187,7 +212,6 @@ class LoginPage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                           
                           ],
                         ),
                       ),

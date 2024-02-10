@@ -33,7 +33,6 @@ class MyHomePage extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             children: [
               appBarCastom(logo),
-              const Gap(15),
               FadeInDown(
                   duration: const Duration(seconds: 2),
                   child: UserInfoCard(
@@ -45,11 +44,13 @@ class MyHomePage extends StatelessWidget {
                   )),
               const Gap(20),
               CastomButton(
-                  logic: () {
-                    Get.to(const SeacrchPage());
-                  },
-                  borderColor: Colors.black,
-                  namebutton: "بحث عن طلبات", textColor: Colors.black,),
+                logic: () {
+                  Get.to(const SeacrchPage());
+                },
+                borderColor: Colors.black,
+                namebutton: "بحث عن طلبات",
+                textColor: Colors.black,
+              ),
               const Gap(20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -73,6 +74,29 @@ class MyHomePage extends StatelessWidget {
                       ))
                 ],
               ),
+              Container(
+                padding: const EdgeInsets.all(20),
+                height: 185,
+                margin: const EdgeInsets.only(top: 20),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 238, 238, 238),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          "* يمكنك تحقيق الارباح عن طريق طلب مقتراحات او عروض من الزبائن"),
+                      Text(
+                          "*تستطيع مشاهدة عدد الاعمال والطلبات في الوجهة الرئيسية"),
+                      Text(
+                          "*ميزة جديدة للبحث عن طلبات من العملاء واعطاء عروض لهم"),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

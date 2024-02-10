@@ -1,5 +1,5 @@
 import 'package:craft/constant/constant.dart';
-import 'package:craft/view/person/career_and_search_page/card_worker_search.dart';
+import 'package:craft/view/client/career_and_search_page/card_worker_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
@@ -25,7 +25,7 @@ class NotificationsPage extends StatelessWidget {
           itemCount: 1,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   color: Colors.grey.shade200,
                   borderRadius: BorderRadius.circular(20)),
@@ -127,7 +127,7 @@ class NotificationsPage extends StatelessWidget {
                     "قدم اليك طلب",
                     style: TextStyle(color: Colors.grey),
                   ),
-                  Gap(7),
+                  const Gap(7),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [

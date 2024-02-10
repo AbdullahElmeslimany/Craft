@@ -1,6 +1,7 @@
-import 'package:craft/view/person/clienthome.dart';
-import 'package:craft/view/person/notifications_person_on_app/notifications_person.dart';
-import 'package:craft/view/worker/home/homepage.dart';
+import 'package:craft/view/client/clienthome.dart';
+import 'package:craft/view/client/notifications_person_on_app/notifications_person.dart';
+import 'package:craft/view/client/order_page/order_page.dart';
+import 'package:craft/view/client/setting_page/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -9,14 +10,19 @@ class ButtonBarC extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PersistentTabController _controller;
+    PersistentTabController controller;
 
-    _controller = PersistentTabController(initialIndex: 0);
-    List<Widget> _buildScreens() {
-      return [const ClientHome(), const MyHomePage(), NotificationClientPage()];
+    controller = PersistentTabController(initialIndex: 0);
+    List<Widget> buildScreens() {
+      return [
+        const ClientHome(),
+        const OrderPage(),
+        const NotificationClientPage(),
+        const SettingPage(),
+      ];
     }
 
-    List<PersistentBottomNavBarItem> _navBarsItems() {
+    List<PersistentBottomNavBarItem> navBarsItems() {
       return [
         PersistentBottomNavBarItem(
           activeColorSecondary: Colors.white,
@@ -25,18 +31,18 @@ class ButtonBarC extends StatelessWidget {
             Icons.home,
             color: Colors.black,
           ),
-          title: ("Home"),
+          title: ("رئيسية"),
           activeColorPrimary: Colors.redAccent,
           inactiveColorPrimary: Colors.black,
         ),
         PersistentBottomNavBarItem(
           activeColorSecondary: Colors.white,
           icon: const Icon(
-            Icons.settings,
+            Icons.assignment_rounded,
             color: Colors.black,
           ),
-          title: ("Settings"),
-          activeColorPrimary: Colors.green,
+          title: ("طلبات"),
+          activeColorPrimary: Colors.blue,
           inactiveColorPrimary: Colors.black,
         ),
         PersistentBottomNavBarItem(
@@ -45,8 +51,18 @@ class ButtonBarC extends StatelessWidget {
             Icons.notifications_on_outlined,
             color: Colors.black,
           ),
-          title: ("Notifications"),
-          activeColorPrimary: Colors.blue,
+          title: ("اشعارات"),
+          activeColorPrimary: Colors.orangeAccent,
+          inactiveColorPrimary: Colors.black,
+        ),
+        PersistentBottomNavBarItem(
+          activeColorSecondary: Colors.white,
+          icon: const Icon(
+            Icons.settings,
+            color: Colors.black,
+          ),
+          title: ("الاعدادات"),
+          activeColorPrimary: Colors.green,
           inactiveColorPrimary: Colors.black,
         ),
       ];
@@ -54,17 +70,15 @@ class ButtonBarC extends StatelessWidget {
 
     return PersistentTabView(
       context,
-      controller: _controller,
-      screens: _buildScreens(),
-      items: _navBarsItems(),
+      controller: controller,
+      screens: buildScreens(),
+      items: navBarsItems(),
       confineInSafeArea: true,
-      backgroundColor: Colors.white, // Default is Colors.white.
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset:
-          true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows:
-          true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+      backgroundColor: Colors.white,
+      handleAndroidBackButtonPress: true,
+      resizeToAvoidBottomInset: true,
+      stateManagement: true,
+      hideNavigationBarWhenKeyboardShows: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
@@ -72,19 +86,15 @@ class ButtonBarC extends StatelessWidget {
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
       itemAnimationProperties: const ItemAnimationProperties(
-        // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 200),
         curve: Curves.ease,
       ),
       screenTransitionAnimation: const ScreenTransitionAnimation(
-        // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
       ),
-      navBarStyle:
-          NavBarStyle.style7, // Choose the nav bar style with this property.
+      navBarStyle: NavBarStyle.style7,
     );
-    ;
   }
 }
