@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "835514791829",
-    "project_id": "craft-d82ee",
-    "storage_bucket": "craft-d82ee.appspot.com"
+    "project_number": "430861744308",
+    "project_id": "craft-4bb58",
+    "storage_bucket": "craft-4bb58.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:835514791829:android:838ae16fd022f1fa60a89c",
+        "mobilesdk_app_id": "1:430861744308:android:9a4568e907923498d17fe1",
         "android_client_info": {
           "package_name": "com.example.craft"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBUDXSU6PanFn-GedHSau-3UfCWT6AHuho"
+          "current_key": "AIzaSyBMuLxUWszflW0qq9iBjVXOKqltWgdMX8M"
         }
       ],
       "services": {

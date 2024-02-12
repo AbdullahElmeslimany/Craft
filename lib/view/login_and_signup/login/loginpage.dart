@@ -4,6 +4,7 @@ import 'package:craft/view/login_and_signup/register/registerpage.dart';
 import 'package:craft/view/worker/home/worker_homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -156,12 +157,13 @@ class LoginPage extends StatelessWidget {
                                         emailAddress: email.text,
                                         password: password.text,
                                         getcontext: context);
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const MyHomePage(),
-                                        ));
+                                        // if (condition) {
+                                    Get.offAll(MyHomePage());
+                                          
+                                        // }
+                                        // else if(){
+
+                                        // }
                                   }
                                 },
                                 child: const Text(
