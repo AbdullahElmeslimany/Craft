@@ -83,7 +83,7 @@ class SeacrchPage extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold)),
-                              Gap(6),
+                              const Gap(6),
                               Row(
                                 children: [
                                   const Text(

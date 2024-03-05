@@ -1,4 +1,3 @@
-import 'package:craft/view/client/edit_data/edit_data.dart';
 import 'package:craft/view/firstpage/firstscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,7 +24,7 @@ class SettingPage extends StatelessWidget {
                 child: Center(
                   child: ListTile(
                     onTap: () {
-                      Get.to(const EditDataPage());
+                      // Get.to(const EditDataPage());
                     },
                     trailing: const Icon(Icons.arrow_forward_ios_rounded),
                     title: Text(

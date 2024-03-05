@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
-import '../../client/app_bar_buttom/bar_buttom_app.dart';
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -177,9 +175,9 @@ class _LoginPageState extends State<LoginPage> {
                                     });
                                     print(dataitem[0]["type"]);
                                     if (dataitem[0]["type"] == "1") {
-                                      Get.offAll(ButtonBarC(
-                                        data: dataitem,
-                                      ));
+                                      // Get.offAll(ButtonBarC(
+                                      //   data: dataitem,
+                                      // ));
                                     } else if (dataitem[0]["type"] == "2") {
                                       Get.offAll(MyHomePage(
                                         data: dataitem,

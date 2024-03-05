@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:craft/view/client/app_bar_buttom/bar_buttom_app.dart';
 import 'package:craft/view/worker/home/worker_homepage.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +26,7 @@ abstract class DataController {
       Get.snackbar(
           snackPosition: SnackPosition.TOP, '', 'تم انشاء الحساب بنجاح');
       if (type == "1") {
-        Get.offAll(const ButtonBarC());
+        // Get.offAll(const ButtonBarC());
       } else if (type == "2") {
         Get.offAll(const MyHomePage());
       }
