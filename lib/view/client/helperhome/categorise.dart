@@ -7,13 +7,13 @@ import 'package:get/get.dart';
 
 class Categorise extends StatelessWidget {
   final double hight;
-  final  numberlist;
+  final numberlist;
   const Categorise({super.key, this.hight = 305, required this.numberlist});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       height: hight,
       width: MediaQuery.sizeOf(context).width - 30,
       decoration: BoxDecoration(
@@ -22,7 +22,7 @@ class Categorise extends StatelessWidget {
       ),
       child: GridView.builder(
         padding: const EdgeInsets.all(10),
-        // physics: const NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: 1,
           mainAxisExtent: 100,

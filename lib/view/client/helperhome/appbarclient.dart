@@ -1,4 +1,5 @@
-import 'package:craft/view/client/notifications_person_on_app/notifications_person.dart';
+import 'package:craft/view/client/setting_page/setting_page.dart';
+import 'package:craft/view/searchpage/searchpage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,11 +20,15 @@ Row appBarClient(String logo) {
         children: [
           IconButton(
             icon: const Icon(Icons.search_rounded),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(SeacrchPage());
+            },
           ),
           IconButton(
             icon: const Icon(Icons.settings),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const SettingPage());
+            },
           )
         ],
       )

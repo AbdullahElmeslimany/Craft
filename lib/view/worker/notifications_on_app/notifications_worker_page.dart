@@ -1,5 +1,4 @@
 import 'package:craft/constant/constant.dart';
-import 'package:craft/view/client/career_and_search_page/card_worker_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
@@ -35,7 +34,7 @@ class NotificationsPage extends StatelessWidget {
                     onTap: () {},
                     child: Container(
                       margin: const EdgeInsets.all(15),
-                      height: 145,
+                      height: 130,
                       decoration: BoxDecoration(
                           color: Colors.grey.shade300,
                           borderRadius: BorderRadius.circular(20)),
@@ -64,8 +63,8 @@ class NotificationsPage extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 20),
                                 child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  // mainAxisAlignment:
+                                  //     MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Hero(
@@ -75,57 +74,27 @@ class NotificationsPage extends StatelessWidget {
                                         style: const TextStyle(fontSize: 18),
                                       ),
                                     ),
-                                    const Gap(6),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          typeWorker,
-                                          style: const TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.black),
-                                        ),
-                                        Text(
-                                          addressWorker,
-                                          style: const TextStyle(
-                                              fontSize: 12, color: Colors.grey),
-                                        ),
-                                      ],
+                                    // const Gap(6),
+                                    Text(
+                                      addressWorker,
+                                      style: const TextStyle(
+                                          fontSize: 12, color: Colors.grey),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 25.0),
-                                      child: Row(
-                                        children: [
-                                          RatingBarIndicator(
-                                            rating: rateWorker,
-                                            itemBuilder: (context, index) =>
-                                                const Icon(
-                                              Icons.star,
-                                              color: Colors.amber,
-                                            ),
-                                            itemCount: 5,
-                                            itemSize: 20.0,
-                                            direction: Axis.horizontal,
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 7.0),
-                                            child: Text(numberClientForWorker),
-                                          ),
-                                        ],
-                                      ),
-                                    )
+                                    const Gap(25),
+                                    const Text(
+                                      "قدم اليك طلب صيانة",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color:
+                                              Color.fromARGB(255, 2, 170, 192)),
+                                    ),
                                   ],
                                 ),
                               ))
                         ],
                       ),
                     ),
-                  ),
-                  const Text(
-                    "قدم اليك طلب",
-                    style: TextStyle(color: Colors.grey),
                   ),
                   const Gap(7),
                   Row(

@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class ButtonBarC extends StatelessWidget {
-  const ButtonBarC({super.key});
+  final data;
+  const ButtonBarC({super.key, this.data});
 
   @override
   Widget build(BuildContext context) {

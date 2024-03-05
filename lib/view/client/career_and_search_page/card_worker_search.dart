@@ -56,18 +56,29 @@ cardWorkerForSearch(
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Hero(tag: typeWorker,
+                        Hero(
+                          tag: typeWorker,
                           child: Text(
                             typeWorker,
                             style: const TextStyle(
                                 fontSize: 14, color: Colors.black),
                           ),
                         ),
-                       Hero(tag: addressWorker,
-                          child: Text(
-                            addressWorker,
-                            style:
-                                const TextStyle(fontSize: 12, color: Colors.grey),
+                        Hero(
+                          tag: addressWorker,
+                          child: Row(
+                            children: [
+                              Text(
+                                addressWorker,
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.grey),
+                              ),
+                              Icon(
+                                Icons.location_on,
+                                color: Colors.grey.shade700,
+                                size: 19,
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -76,7 +87,8 @@ cardWorkerForSearch(
                       padding: const EdgeInsets.only(top: 25.0),
                       child: Row(
                         children: [
-                          Hero(tag: "$rateWorker",
+                          Hero(
+                            tag: "$rateWorker",
                             child: RatingBarIndicator(
                               rating: rateWorker,
                               itemBuilder: (context, index) => const Icon(
@@ -91,8 +103,8 @@ cardWorkerForSearch(
                           Padding(
                             padding: const EdgeInsets.only(left: 7.0),
                             child: Hero(
-                              tag: numberClientForWorker,
-                              child: Text(numberClientForWorker)),
+                                tag: numberClientForWorker,
+                                child: Text(numberClientForWorker)),
                           ),
                         ],
                       ),

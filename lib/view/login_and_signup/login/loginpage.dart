@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:craft/controller/logincontroller.dart';
 import 'package:craft/model/logic_login.dart';
 import 'package:craft/view/login_and_signup/register/registerpage.dart';
@@ -6,12 +7,19 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget {
+import '../../client/app_bar_buttom/bar_buttom_app.dart';
+
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
-    LoginContrroller loginContrroller = LoginContrroller();
+    // AuthContrroller loginContrroller = AuthContrroller();
     return Scaffold(
       body: Container(
         height: MediaQuery.sizeOf(context).height,
@@ -45,12 +53,12 @@ class LoginPage extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
                     ),
-                    const Gap(12),
+                    const Gap(10),
                     Text(
                       "يجب تسجيل الدخول لاستخدام التطبيق",
-                      style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                     ),
-                    const Gap(17),
+                    const Gap(20),
                     Center(
                       child: Form(
                         key: formKeylogin,
@@ -118,8 +126,7 @@ class LoginPage extends StatelessWidget {
                                         },
                                         controller: password,
                                         obscureText: true,
-                                        keyboardType:
-                                            TextInputType.emailAddress,
+                                        keyboardType: TextInputType.number,
                                         decoration: const InputDecoration(
                                           filled: true,
                                           fillColor: Colors.white,
@@ -147,23 +154,37 @@ class LoginPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(25)),
                               child: MaterialButton(
                                 onPressed: () async {
+                                  List dataitem = [];
+
                                   if (formKeylogin.currentState!.validate()) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                           content:
                                               Text('انتظر جاري تسجيل الدخول')),
                                     );
-                                    loginContrroller.loginAuth(
+                                    AuthContrroller.loginAuth(
                                         emailAddress: email.text,
                                         password: password.text,
                                         getcontext: context);
-                                        // if (condition) {
-                                    Get.offAll(MyHomePage());
-                                          
-                                        // }
-                                        // else if(){
-
-                                        // }
+                                    FirebaseFirestore firestore =
+                                        FirebaseFirestore.instance;
+                                    QuerySnapshot data = await firestore
+                                        .collection("users")
+                                        .where("mail", isEqualTo: email.text)
+                                        .get();
+                                    setState(() {
+                                      dataitem.addAll(data.docs);
+                                    });
+                                    print(dataitem[0]["type"]);
+                                    if (dataitem[0]["type"] == "1") {
+                                      Get.offAll(ButtonBarC(
+                                        data: dataitem,
+                                      ));
+                                    } else if (dataitem[0]["type"] == "2") {
+                                      Get.offAll(MyHomePage(
+                                        data: dataitem,
+                                      ));
+                                    }
                                   }
                                 },
                                 child: const Text(

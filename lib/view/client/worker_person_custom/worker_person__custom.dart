@@ -1,6 +1,5 @@
 import 'package:craft/constant/constant.dart';
 import 'package:craft/view/client/app_bar_buttom/bar_buttom_app.dart';
-import 'package:craft/view/client/clienthome.dart';
 import 'package:craft/view/client/worker_person_custom/helper/button_accept_worker.dart';
 import 'package:craft/view/client/worker_person_custom/helper/card_information_worker.dart';
 import 'package:craft/view/client/worker_person_custom/imageinfo.dart';
@@ -22,7 +21,9 @@ class WorkerPersonCastomPage extends StatelessWidget {
             child: infoCradInformationWorker(MediaQuery.sizeOf(context).width),
           ),
           buttonAcceptWorker(MediaQuery.sizeOf(context).width, onPressed: () {
-            Get.offAll(ButtonBarC());
+            Get.offAll(ButtonBarC(
+              data: null,
+            ));
             Get.defaultDialog(
                 title: "تم ارسال طلب", content: Text(" الي $nameWorker"));
           }),

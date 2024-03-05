@@ -1,9 +1,8 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:craft/view/client/categorise_page/helperhome/appbarclient.dart';
-import 'package:craft/view/client/categorise_page/helperhome/categorise.dart';
+import 'package:craft/view/client/helperhome/appbarclient.dart';
+import 'package:craft/view/client/helperhome/categorise.dart';
 import 'package:craft/view/client/categorise_page/categorise_page.dart';
-import 'package:craft/view/client/categorise_page/helperhome/slider.dart';
-
+import 'package:craft/view/client/helperhome/slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -18,7 +17,7 @@ class ClientHome extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -33,7 +32,7 @@ class ClientHome extends StatelessWidget {
                 padding: EdgeInsets.only(right: 10.0),
                 child: Text(
                   "العروض",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -61,14 +60,14 @@ class ClientHome extends StatelessWidget {
                         "الكل",
                         style: TextStyle(
                             color: Color.fromARGB(207, 99, 156, 255),
-                            fontSize: 16,
+                            fontSize: 14.5,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                     const Text(
                       "الصيانة",
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -78,7 +77,29 @@ class ClientHome extends StatelessWidget {
             const Center(
                 child: Categorise(
               numberlist: 9,
-            ))
+            )),
+            Center(
+              child: Container(
+                height: 100,
+                width: MediaQuery.sizeOf(context).width - 25,
+                padding: const EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(193, 251, 64, 39),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Center(
+                    child: Text(
+                      "لايجاد عامل الموضوع اصبح سهلا\nكل ما عليك سواء ايجاد نوع المشكلة وسيظر لك ما تحتاج",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 255, 255, 255)),
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       )),

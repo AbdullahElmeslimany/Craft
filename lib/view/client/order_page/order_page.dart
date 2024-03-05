@@ -60,9 +60,10 @@ class OrderPage extends StatelessWidget {
                                       const Gap(5),
                                       const Text("كهربائي",
                                           style: TextStyle(
-                                            color: Colors.grey,
-                                            fontSize: 14,
-                                          )),
+                                              color: Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                   RatingBarIndicator(

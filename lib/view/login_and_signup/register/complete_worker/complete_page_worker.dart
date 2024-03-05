@@ -1,13 +1,21 @@
 import 'package:craft/constant/categorise_list.dart';
 import 'package:craft/constant/constant.dart';
-import 'package:craft/view/worker/home/worker_homepage.dart';
+import 'package:craft/controller/logincontroller.dart';
+import 'package:craft/model/logic_login.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CompletePageWorker extends StatefulWidget {
-  const CompletePageWorker({super.key});
+  final String emailAddress;
+
+  final String password;
+  final type;
+  const CompletePageWorker(
+      {super.key,
+      required this.emailAddress,
+      required this.password,
+      required this.type});
 
   @override
   State<CompletePageWorker> createState() => _CompletePageWorkerState();
@@ -145,7 +153,7 @@ class _CompletePageWorkerState extends State<CompletePageWorker> {
                           controller: direction,
                           keyboardType: TextInputType.name,
                           decoration: const InputDecoration(
-                            contentPadding: EdgeInsets.only(right: 18,top: 15),
+                            contentPadding: EdgeInsets.only(right: 18, top: 15),
                             prefixIcon:
                                 Icon(Icons.drive_file_rename_outline_outlined),
                             filled: true,
@@ -179,11 +187,16 @@ class _CompletePageWorkerState extends State<CompletePageWorker> {
                               content: Text('انتظر جاري انشاء الحساب')),
                         );
 
-                        Get.offAll(MyHomePage());
-                        Get.snackbar(
-                            snackPosition: SnackPosition.TOP,
-                            '',
-                            'تم انشاء الحساب بنجاح');
+                        AuthContrroller.createAccountAuth(
+                            emailAddress: widget.emailAddress,
+                            password: widget.password,
+                            type: widget.type,
+                            cost: cost.text,
+                            craft: dropDownValueCraft,
+                            dircaction: direction.text,
+                            name: name.text,
+                            gavern: dropDownValueGaver,
+                            phone: phone.text);
                       }
                     },
                     child: Container(

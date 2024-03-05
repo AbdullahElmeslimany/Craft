@@ -9,7 +9,8 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  final data;
+  const MyHomePage({super.key, this.data});
 
   @override
   Widget build(BuildContext context) {

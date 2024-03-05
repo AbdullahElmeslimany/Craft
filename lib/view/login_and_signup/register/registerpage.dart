@@ -1,8 +1,7 @@
+import 'package:craft/controller/logincontroller.dart';
 import 'package:craft/model/logic_login.dart';
 import 'package:craft/view/login_and_signup/register/complete_worker/complete_page_worker.dart';
-import 'package:craft/view/worker/home/worker_homepage.dart';
 import 'package:craft/view/login_and_signup/login/loginpage.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -52,7 +51,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     const Gap(12),
                     Text(
                       "يمكنك الان انشاء حساب جديد",
-                      style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                      style: TextStyle(fontSize: 13, color: Colors.grey[500]),
                     ),
                     const Gap(17),
                     Padding(
@@ -246,14 +245,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 const SnackBar(
                                     content: Text('انتظر جاري انشاء الحساب')),
                               );
-                              await FirebaseAuth.instance
-                                  .createUserWithEmailAndPassword(
-                                      email: email.text,
-                                      password: password.text);
-                              Get.offAll(const MyHomePage());
+
+                              AuthContrroller.createAccountAuth(
+                                  emailAddress: email.text,
+                                  password: password.text,
+                                  type: type,
+                                  name: name.text,
+                                  phone: phone.text,
+                                  cost: "",
+                                  craft: "",
+                                  dircaction: "",
+                                  gavern: "");
+                              // await DataController.authAddData(
+                              //     name: name.text,
+                              //     mail: email.text,
+                              //     type: type,
+                              //     phone: phone,
+                              //     gavern: "",
+                              //     craft: "",
+                              //     cost: "",
+                              //     dircaction: "");
                             }
                             if (type == "2") {
-                              Get.offAll(const CompletePageWorker());
+                              Get.offAll(CompletePageWorker(
+                                  emailAddress: email.text,
+                                  password: password.text,
+                                  type: type));
                             }
                           }
                         },

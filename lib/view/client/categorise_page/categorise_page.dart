@@ -1,5 +1,5 @@
 import 'package:craft/constant/categorise_list.dart';
-import 'package:craft/view/client/categorise_page/helperhome/categorise.dart';
+import 'package:craft/view/client/helperhome/categorise.dart';
 import 'package:flutter/material.dart';
 
 class CategoriseAllPage extends StatelessWidget {
